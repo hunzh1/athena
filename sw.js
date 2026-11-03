@@ -1,5 +1,5 @@
 /* 进销存 PWA service worker —— 生成物，改版本请重跑 build/make_pwa.cjs */
-const CACHE = 'xh-jxc-a2dcf7e2dc5f-b1c7e0';
+const CACHE = 'xh-jxc-dc680cd15a20-b1c7e0';
 const PRECACHE = [
   './',
   './index.html',

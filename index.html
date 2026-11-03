@@ -742,8 +742,8 @@ body.sheet-open { overflow: hidden; }
 <meta name="apple-mobile-web-app-title" content="进销存系统">
 <meta name="application-name" content="进销存系统">
 <link rel="manifest" href="./manifest.json">
-<link rel="apple-touch-icon" href="./icons/apple-touch-icon.png?v=a2dcf7e2dc5f-b1c7e0">
-<link rel="icon" href="./icons/icon-192.png?v=a2dcf7e2dc5f-b1c7e0">
+<link rel="apple-touch-icon" href="./icons/apple-touch-icon.png?v=dc680cd15a20-b1c7e0">
+<link rel="icon" href="./icons/icon-192.png?v=dc680cd15a20-b1c7e0">
 </head>
 <body>
 <div id="app"></div>
@@ -3135,11 +3135,11 @@ window.__SEED__ = {"version":2,"products":[{"id":"p001","name":"蕲艾灯泡肌�
         '<button class="link danger" data-act="delProduct" data-id="' + esc(m.pid) + '">× 删除这个产品</button>';
       okLabel = '保存价格';
     }
-    foot = '<button class="btn ghost" data-act="modalClose">取消</button>' +
+    foot = '<button class="btn ghost" data-act="modalX">取消</button>' +
       '<button class="btn primary" data-act="modalOk"' + (m.type === 'out' && outBlocked() ? ' disabled' : '') + '>' + okLabel + '</button>';
     return '<div class="sheet" data-act="modalClose"><div class="sheet-panel" role="dialog" aria-modal="true" aria-label="' + esc(title) + '">' +
       '<div class="sheet-hd"><h2>' + esc(title) + '</h2>' +
-      '<button class="iconbtn sm" data-act="modalClose" aria-label="关闭">' + icon('close', 20) + '</button></div>' +
+      '<button class="iconbtn sm" data-act="modalX" aria-label="关闭">' + icon('close', 20) + '</button></div>' +
       '<div class="sheet-body">' + body + '</div>' +
       '<div class="sheet-foot">' + foot + '</div>' +
       '</div></div>';
@@ -3655,6 +3655,7 @@ window.__SEED__ = {"version":2,"products":[{"id":"p001","name":"蕲艾灯泡肌�
     }
 
     switch (act) {
+      case 'modalX': closeModal(); break;
       case 'nav': go(v); break;
       case 'set': state.page = SET; state.clearStep = 0; state.modal = null; render({ top: true }); break;
       case 'backSet': state.page = SET; state.clearStep = 0; render({ top: true }); break;
